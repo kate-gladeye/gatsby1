@@ -111,7 +111,7 @@ function Form() {
 
     const form = (
         <form onSubmit={handleSubmit}>
-            <input type="hidden" value="contact" />
+            <input type="hidden" name="form-name" value="contact" />
 
             <div>
                 <label htmlFor="name">
@@ -140,7 +140,7 @@ function Form() {
                 <div className="errors" data-for="industry"></div>
             </div>
 
-            <button type="submit" value="Send" disabled={!validState} />
+            <button type="submit" disabled={!validState}>Submit</button>
         </form>
     )
 
