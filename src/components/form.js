@@ -110,7 +110,7 @@ function Form() {
     }
 
     const form = (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
 
             <div>
