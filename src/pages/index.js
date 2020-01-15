@@ -7,7 +7,7 @@ export default ({ data }) => {
   return (
     <React.Fragment>
       <h1>Gatsby Website</h1>
-      <p>The image below is responsive and optimised.</p>
+      <p>The image below is responsive.</p>
       <div>
         {(data.file != null &&
           <Img

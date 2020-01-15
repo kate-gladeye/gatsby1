@@ -58,7 +58,14 @@ function Form() {
         e.preventDefault()
         if(validState){
             // do submit stuff here
-            setFormSentState(true)
+            // put on loader
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", ...formState })
+              })
+                .then(() => setFormSentState(true))
+                .catch(error => alert(error))
         }
     }
 
@@ -92,6 +99,14 @@ function Form() {
             valid: valid,
             errorMessages: errorMessages
         }
+    }
+
+    const encode = (data) => {
+        return Object.keys(data).map(key => {
+            return (
+                encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+            )
+        }).join("&")
     }
 
     const form = (
