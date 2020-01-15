@@ -110,7 +110,7 @@ function Form() {
     }
 
     const form = (
-        <form onSubmit={handleSubmit} data-netlify="true">
+        <form onSubmit={handleSubmit} data-netlify="true" data-netlify-honeypot="bot-field" name="contact">
             <input type="hidden" name="form-name" value="contact" />
 
             <div>
